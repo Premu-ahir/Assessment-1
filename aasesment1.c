@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+// Function prototypes
 void reverseS(char str[]);
 void concatenateS(char str1[], char str2[], char result[]);
 int Palindrome(char str[]);
@@ -33,10 +34,12 @@ void main() {
         getchar();  
 
         switch(choice) {
-            case 1:
-                printf("Enter string: ");
-                fgets(str, sizeof(str), stdin);
-                str[strcspn(str, "\n")] = '\0'; 
+  // Reverse a string  
+
+	case 1:
+         	printf("Enter string: ");
+            	fgets(str, sizeof(str), stdin);
+               	 str[strcspn(str, "\n")] = '\0'; 
                 
                 char reversed[100];
                 strcpy(reversed, str);
@@ -44,7 +47,9 @@ void main() {
                 printf("Reversed string: %s\n", reversed);
                 break;
 
-            case 2: 
+ // Concatenate strings    
+
+	case 2: 
                 printf("Enter the first string: ");
                 fgets(str, sizeof(str), stdin);
                 str[strcspn(str, "\n")] = '\0';  
@@ -56,6 +61,8 @@ void main() {
                 concatenateS(str, str2, concatenated);
                 printf("Concatenated string: %s\n", concatenated);
                 break;
+
+// Check if a string is a palindrome
 
             case 3: 
                 printf("Enter a string: ");
@@ -69,6 +76,8 @@ void main() {
                 }
                 break;
 
+ // Copy a string
+
             case 4: 
                 printf("Enter a string: ");
                 fgets(str, sizeof(str), stdin);
@@ -79,6 +88,8 @@ void main() {
                 printf("Copied string: %s\n", copied);
                 break;
 
+// Find the length of a string
+
             case 5: 
                 printf("Enter a string: ");
                 fgets(str, sizeof(str), stdin);
@@ -87,6 +98,8 @@ void main() {
                 length = stringL(str);
                 printf("Length of the string: %d\n", length);
                 break;
+
+// Find frequency of a character
 
             case 6: 
                 printf("Enter a string: ");
@@ -100,6 +113,8 @@ void main() {
                 printf("Frequency of '%c': %d\n", ch, frequency);
                 break;
 
+// Count vowels and consonants
+
             case 7: 
                 printf("Enter a string: ");
                 fgets(str, sizeof(str), stdin);
@@ -108,6 +123,7 @@ void main() {
                 printf("Number of vowels: %d\n", countVowels(str));
                 printf("Number of consonants: %d\n", countConsonants(str));
                 break;
+// Count blank spaces and digits
 
             case 8: 
                 printf("Enter a string: ");
@@ -117,6 +133,7 @@ void main() {
                 printf("Number of blank spaces: %d\n", countBlankSpaces(str));
                 printf("Number of digits: %d\n", countDigits(str));
                 break;
+// Exit 
 
             case 9:
                 printf("Exiting...\n");
@@ -130,6 +147,8 @@ void main() {
 
 
 }
+
+// Function to reverse a string
 
 void reverseS(char str[]) {
     int start = 0;
@@ -145,11 +164,14 @@ void reverseS(char str[]) {
     }
 }
 
+// Function to concatenate two strings
 
 void concatenateS(char str1[], char str2[], char result[]) {
     strcpy(result, str1);
     strcat(result, str2);
 }
+
+// Function to check if a string is a palindrome
 
 int Palindrome(char str[]) {
     int start = 0;
@@ -165,10 +187,13 @@ int Palindrome(char str[]) {
     return 1; 
 }
 
+// Function to copy a string
 
 void copyS(char dest[], const char src[]) {
     strcpy(dest, src);
 }
+
+// Function to find the length of a string
 
 int stringL(const char str[]) {
     int length = 0;
@@ -177,6 +202,8 @@ int stringL(const char str[]) {
     }
     return length;
 }
+
+// Function to find the frequency of a character in a string
 
 int charF(const char str[], char ch) {
     int count = 0;
@@ -189,6 +216,8 @@ int charF(const char str[], char ch) {
     }
     return count;
 }
+
+// Function to count vowels in a string
 
 int countVowels(const char str[]) {
     int count = 0;
@@ -203,6 +232,8 @@ int countVowels(const char str[]) {
     }
     return count;
 }
+
+// Function to count consonants in a string
 
 int countConsonants(const char str[]) {
     int count = 0;
@@ -219,6 +250,9 @@ int countConsonants(const char str[]) {
     }
     return count;
 }
+
+// Function to count blank spaces in a string
+
 int countBlankSpaces(const char str[]) {
     int count = 0;
     int i = 0;
@@ -230,6 +264,8 @@ int countBlankSpaces(const char str[]) {
     }
     return count;
 }
+
+// Function to count digits in a string
 
 int countDigits(const char str[]) {
     int count = 0;
